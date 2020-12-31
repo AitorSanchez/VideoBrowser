@@ -1,7 +1,7 @@
 <template>
     <div>
         <input/><!-- @input="onInput"-->
-        <button @click="onInput">Search</button>
+        <button class="btn btn-primary" @click="onInput">Search</button>
     </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
         onInput: function(event) {
             this.$emit(
                 'termChange', 
-                event.target.value
+                event.target.previousElementSibling.value
             );
         }
     }

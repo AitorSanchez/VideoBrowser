@@ -1,3 +1,6 @@
+A Youtube video browser developed with Vue.js
+
+
 # video-browser
 
 ## Project setup
