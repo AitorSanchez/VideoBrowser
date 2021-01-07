@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input/><!-- @input="onInput"-->
+        <input @keypress="onKeypress"/><!-- @input="onInput"-->
         <button class="btn btn-primary" @click="onInput">Search</button>
     </div>
 </template>
@@ -14,11 +14,26 @@ export default {
                 'termChange', 
                 event.target.previousElementSibling.value
             );
+        },
+        onKeypress: function(event) {
+            if (event.keyCode === 13) {
+                this.$emit(
+                    'termChange', 
+                    event.target.value
+                );
+            }
         }
     }
 };
 </script>
 
-<style>
+<style scoped>
+    input {
+        width: 75%;
+    }
 
+    div {
+        text-align: center;
+        margin: 20px;;
+    }
 </style>
